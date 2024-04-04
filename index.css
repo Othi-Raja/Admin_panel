@@ -1,3 +1,89 @@
-*{
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Custom Navbar Style */
+.navbar-custom {
+  background-color: #343a40;
+  /* Navbar background color */
+}
+
+.navbar-custom .navbar-brand {
+  color: #ffffff;
+  /* Logo color */
+  font-weight: bold;
+}
+
+.navbar-custom .navbar-brand img {
+  max-height: 40px;
+  /* Maximum height for the logo */
+}
+
+.navbar-custom .nav-item {
+  margin-right: 10px;
+  /* Space between each category */
+}
+
+.navbar-custom .nav-link {
+  color: #ffffff;
+  /* Category link color */
+}
+
+.navbar-custom .nav-link:hover {
+  color: #f8f9fa;
+  /* Category link hover color */
+}
+
+.navbar-custom .support-icon,
+.navbar-custom .bag-icon {
+  color: #ffffff;
+  /* Support and bag icon color */
+  font-size: 20px;
+  margin-left: 20px;
+  /* Space between categories and icons */
+}
+
+#products {
+  margin: 20px;
+}
+
+.card-img-overlay {
+  position: relative;
+  padding: 0;
+}
+
+.card-title {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px 16px 0px 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: 	#36454F;
+  padding: 10px;
+  margin: 0;
+  transition: opacity 0.9s linear;
+  
+}
+
+.card-img-overlay:hover .card-title {
+  display: block;
+  cursor: pointer;
 }
