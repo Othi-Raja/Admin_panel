@@ -86,3 +86,10 @@ body {
   display: block;
   cursor: pointer;
 }
+
+ 
+#togle:checked{
+  rotate: -90deg;
+
+}
+ 
