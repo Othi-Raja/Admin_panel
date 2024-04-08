@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Page</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
 </head>
-
 <body>
-
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" style="z-index: 2;">
+    <h4 style="font-weight: bold;">Sleak.com</h4>
+    <div class="avathar ml-auto d-block  " id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item d-flex ">
+          <a class="nav-link text-dark p-3 " id="displayUsername" style="font-size: border ;"></a>
+          <img src="" height="45px" alt="Avatar">
+        </li>
+        <li class="nav-item">
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="container mt-5">
-    <h2 class="mt-5 p-4">Admin panel<svg style="padding-bottom: 10px;" xmlns="http://www.w3.org/2000/svg" width="40"
+    <!-- <h2 class="mt-5 p-4">Admin panel<svg style="padding-bottom: 10px;" xmlns="http://www.w3.org/2000/svg" width="40"
         height="40" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
         <path
           d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z" />
-      </svg></h2>
+      </svg></h2> -->
     <div class="row">
       <!-- Add Product Section -->
       <div class="col-md-4">
@@ -62,7 +73,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
   <script>
     // Initialize Firebase
     const firebaseConfig = {
@@ -75,31 +85,38 @@
       appId: "1:423284421117:web:ec360f39ed01d81b8b2994",
       measurementId: "G-LL7F5C3WPW"
     };
-
     const app = firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
-
-
+    // Get the query string from the URL
+    const queryString = window.location.search;
+    // Parse the query string to get the parameters
+    const urlParams = new URLSearchParams(queryString);
+    // Get the value of the 'data' parameter
+    const data = urlParams.get('data');
+    const gender = urlParams.get('Gender')
+    // console.log(gender);
+    const imgElement = document.querySelector('img');
+    // Set the src attribute of the img element
+    imgElement.src = `https://avatar.iran.liara.run/public/${gender}`;
+    // Set the alt attribute of the img element
+    imgElement.alt = 'ava';
+    $('#displayUsername').text(data)
     function addProduct() {
       const productName = document.getElementById('productName').value;
       const productPrice = document.getElementById('productPrice').value;
       const productDescription = document.getElementById('productDescription').value;
-
       if (productName && productPrice && productDescription) {
         // Add the product to the database
-        const newProductRef = database.ref('products').push();
+        const newProductRef = database.ref(`${data}`).push();
         newProductRef.set({
           name: productName,
           price: productPrice,
           description: productDescription,
-
         });
-
         // Clear the form fields
         document.getElementById('productName').value = '';
         document.getElementById('productPrice').value = '';
         document.getElementById('productDescription').value = '';
-
       }
     }
     document.querySelector('.btn').addEventListener('click', function () {
@@ -111,24 +128,20 @@
       }
     })
     // Function to display  pre data
-    database.ref('products').on('value', (snapshot) => {
+    database.ref(`${data}`).on('value', (snapshot) => {
       const previousDataList = document.getElementById('previousDataList');
       const removeEditDataList = document.getElementById('removeEditDataList');
-
       // remove/edit
       previousDataList.innerHTML = '';
       removeEditDataList.innerHTML = '';
-
       snapshot.forEach((childSnapshot) => {
         const key = childSnapshot.key;
         const product = childSnapshot.val();
-
         // Display previous data
         const previousDataItem = document.createElement('li');
         previousDataItem.className = 'list-group-item';
         previousDataItem.textContent = `${product.name} - $${product.price}`;
         previousDataList.appendChild(previousDataItem);
-
         //  remove/edit o
         const removeEditDataItem = document.createElement('li');
         removeEditDataItem.className = 'list-group-item';
@@ -142,20 +155,17 @@
         removeEditDataList.appendChild(removeEditDataItem);
       });
     });
-
     // Function to remove a product
     function removeProduct(key) {
-      database.ref('products').child(key).remove();
+      database.ref(`${data}`).child(key).remove();
     }
-
     // Function to edit a product
     function editProduct(key, name, price, description) {
       const newName = prompt('Enter new name:', name);
       const newPrice = prompt('Enter new price:', price);
-
       if (newName !== null && newPrice !== null) {
         // Update the product in the database
-        database.ref('products').child(key).update({
+        database.ref(`${data}`).child(key).update({
           name: newName,
           price: newPrice
         });
@@ -163,5 +173,4 @@
     }
   </script>
 </body>
-
 </html>

@@ -4,31 +4,34 @@
 	<title>Sleak.com/Login </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<!-- style sheet  -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!--===============================================================================================-->
 </head>
 <body style="background-color: #666666;">
-	
+	<!-- userlogin  -->
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -36,21 +39,16 @@
 					<span class="login100-form-title p-b-43">
 						Login to continue
 					</span>
-					
-					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email">
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" required>
 						<span class="focus-input100"></span>
 						<span class="label-input100">Email</span>
 					</div>
-					
-					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="pass" required>
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
-
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
 						<div class="contact100-form-checkbox">
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -58,70 +56,188 @@
 								Remember me
 							</label>
 						</div>
-
 						<div>
 							<a href="#" class="txt1">
 								Forgot Password?
 							</a>
 						</div>
 					</div>
-			
-
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login
 						</button>
-						
 					</div>
-					<div class=" sellerbtn flex-c-m">
-						Seller <img src="img/verified.png" alt="verify" height="20px">
+					<div class="login100-form-social flex-c-m mt-3">
+						<button class="btn googlebtn"><img src="img/search.png" height="20px" width="20px" alt="search"
+								style="margin-top: -5;">oogle</button>
 					</div>
-					
-					<div class="text-center p-t-46 p-b-20">
+					<div class="text-center">
 						<span class="txt2">
-							or sign up using
+							Only for Seller
 						</span>
 					</div>
- 
-					<div class="login100-form-social flex-c-m" >
-						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5" style="text-decoration: none;">
-							<i class="fa fa-google" aria-hidden="true"></i>
-						</a>
+					<div class="d-flex  flex-c-m">
+						<div class="sellerbtn flex-c-m" data-toggle="modal" data-target="#exampleModalCenter">
+							Seller <img src="img/verified.png" alt="verify" height="20px"
+								style="padding-left: 5px; padding-right: 10px;">|
+						</div>
+						<div class="login100-form-social flex-c-m mt-3">
+							<a href="#" data-toggle="modal" data-target="#signUpModal" class="btn googlebtn">Sign Up</a>
+						</div>
 					</div>
 				</form>
-
-				<div class="login100-more" style="background-image: url(https://images.unsplash.com/photo-1526751879226-e0ea076b2c70?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
-					<div style="margin-left: 20px; margin-top: 20px; cursor: pointer;" ><svg onclick="openLink('index.html')" xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" class="bi bi-arrow-left" viewBox="0 0 16 16">
-						<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-					  </svg></div>
-					<p class="center-text" style="color: white; margin-top: -20px; font-size: 60px;">Discover Amazing Deals Every Day.</p>
-				  </div>
-				  
-				  
+				<div class="login100-more"
+					style="background-image: url(https://images.unsplash.com/photo-1526751879226-e0ea076b2c70?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+					<div style="margin-left: 20px; margin-top: 20px; cursor: pointer;"><svg
+							onclick="openLink('index.html')" xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+							fill="white" class="bi bi-arrow-left" viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+						</svg></div>
+					<p class="center-text" style="color: white; margin-top: -20px; font-size: 60px;">Discover Amazing
+						Deals Every Day.</p>
+				</div>
 			</div>
 		</div>
 	</div>
-	
-	
-
-	
+	<!-- Login Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Seller Login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<!-- Your login form goes here -->
+					<form>
+						<div class="form-group">
+							<!-- <label for="exampleInputEmail1">Email address</label> -->
+							<input type="email" class="form-control p-4" id="SellerInputEmail1"
+								aria-describedby="emailHelp" placeholder="Enter email" required>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="password" class="form-control p-4" id="SellerInputPassword1"
+									placeholder="Password" required>
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button" id="togglePassword">
+										<i class="fas fa-eye"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="   sellerCardHover" id="sellerbtn">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- account creating modal--Sign Up Modal -->
+	<div class="modal fade glass" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+		aria-hidden="true" >
+		<div class="modal-dialog modal-dialog-centered " role="document" id="signupmodel">
+			<div class="modal-content  ">
+				<div class="modal-header text-center">
+					<h5 class="modal-title text-black mx-auto" id="signUpModalLabel">Welcome to our team of sellers!
+						Together, let's create success stories.</h5>
+				</div>
+				<div class="modal-body" style="background-color:rgb(255, 255, 255);" id="hidemodel">
+					<!-- Your sign up form goes here -->
+					<form id="hideformmodal" class="formPreventDefault">
+						<div class="">
+							<label for="CAInputName " style="font-weight: lighter;">Name</label>
+							<input type="text" class="form-control CA" id="CAInputName" placeholder="Enter name"
+								 >
+								<span id="nameerror"></span>
+						</div>
+						<div class="form-group">
+							<label for="CAInputEmail1" style="font-weight: lighter;">Email address</label>
+							<input type="email" class="form-control CA" id="CAInputEmail1" aria-describedby="emailHelp"
+								placeholder="Enter email"  >
+								<span id="emailerror"></span>
+						</div>
+						<div class="form-group">
+							<label for="CAInputPassword1" style="font-weight: lighter;"> Create Password</label>
+							<div class="input-group">
+								<input type="password" class="form-control CA" id="CAInputPassword1"
+									placeholder="Password"  >
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button" id="togglePassword1">
+										<i class="fas fa-eye"></i>
+									</button><br>
+									<span id="pwderror"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group d-flex align-items-center w-50 mt-3 mb-3 ">
+							<div class="d-flex mr-3  ">
+								<input type="radio" name="gender" id="Male" value="boy" class="p-3 radio-input">
+								<label for="Male" class="ml-2 radio-label">Male</label>
+							</div>
+							<div class="d-flex  ">
+								<input type="radio" name="gender" id="Female" value="girl" class="p-3 radio-input">
+								<label for="Female" class="ml-2 radio-label">Female</label>
+							</div>
+						</div> 
+						<button type="submit" class="btn    w-100" style="border:1px solid rgb(155, 155, 155)" id="CAbtn"
+						>Create
+							Account</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- dotlottie scripttag  -->
+	<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+	<!-- fireabase  -->
+	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+	<!-- firebase  -->
+	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+	<script>
+		// Initialize Firebase
+		const firebaseConfig = {
+			apiKey: "AIzaSyC6DVU-H1R-ywWPtTkCUs37Hnv9lxjIBj8",
+			authDomain: "usercredit-f3790.firebaseapp.com",
+			databaseURL: "https://usercredit-f3790-default-rtdb.firebaseio.com",
+			projectId: "usercredit-f3790",
+			storageBucket: "usercredit-f3790.appspot.com",
+			messagingSenderId: "140361104634",
+			appId: "1:140361104634:web:02585a05330a0cf8b39d43",
+			measurementId: "G-X8GJNKYQNJ"
+		};
+		//  connect to  initializeApp firebase
+		const app = firebase.initializeApp(firebaseConfig);
+        //   create ref to database function 
+		const database = firebase.database();
+	</script>
+	<!-- Font Awesome JS for icons -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+	<!-- jquery  -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<!-- popper animation  -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="index.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/daterangepicker/moment.min.js"></script>
 	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
-
 </body>
 </html>
