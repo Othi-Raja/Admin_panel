@@ -4,17 +4,25 @@
   overflow-x: hidden;
   box-sizing: border-box;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
+
 body {
   font-family: "Lato", sans-serif;
   color: black;
 }
+
 .banner {
   background-color: rgba(209, 229, 237, 0.747);
   border-radius: 20px;
 }
+
+.bannerimg {
+  border-radius: 20px;
+}
+
 /* Custom Navbar Style */
 .navbar-custom {
   /* From https://css.glass */
@@ -23,31 +31,44 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   color: black;
+  font-weight: bold;
+  font-family: serif;
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 .navbar-custom .navbar-brand {
   color: #000000;
   /* Logo color */
   font-weight: bold;
 }
+
 .collapse {
   cursor: pointer;
 }
+
 .navbar-custom .navbar-brand img {
   max-height: 40px;
   /* Maximum height for the logo */
 }
+
 .nav-link:hover {
-  border-bottom: 1px solid red;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
+
 .navbar-custom .nav-item {
   margin-right: 10px;
   /* Space between each category */
 }
+
 .nav-link {
   cursor: pointer;
 }
+
 .navbar-custom .support-icon,
 .navbar-custom .bag-icon {
   color: #000000;
@@ -56,13 +77,16 @@ body {
   margin-left: 20px;
   /* Space between categories and icons */
 }
+
 #products {
   margin: 20px;
 }
+
 .card-img-overlay {
   position: relative;
   padding: 0;
 }
+
 .card-title {
   display: none;
   position: absolute;
@@ -81,15 +105,58 @@ body {
   margin: 0;
   transition: opacity 0.9s linear;
 }
+
 .card-img-overlay:hover .card-title {
   transition: all 2s ease;
   display: block;
   cursor: pointer;
 }
 
- 
-#togle:checked{
+#togle:checked {
   rotate: -90deg;
-
 }
+
+.offertxt {
+  font-weight: bold;
+  color: rgba(128, 128, 128, 0.514);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.16);
+}
+
+.coupon {
+  /* From https://css.glass */
+  background: rgba(73, 73, 73, 0.284);
+  border-radius: 16px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* border-radius: 10px; */
+  color: white;
+  transition: all .7s ease;
+}
+
+.coupon:hover {
+  background-color: rgba(128, 128, 128, 0.337);
+  color: gray;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.banner {
+  background: url('img/Automatics_Dbur.jpg') no-repeat center;
+  background-size: cover;
+  -webkit-backdrop-filter: blur(7.1px);
+}
+
  

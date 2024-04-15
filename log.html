@@ -40,12 +40,12 @@
 						Login to continue
 					</span>
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" required>
+						<input class="input100" type="text" name="email" id="loginUserName" required>
 						<span class="focus-input100"></span>
-						<span class="label-input100">Email</span>
+						<span class="label-input100">UserName</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" required>
+						<input class="input100" type="password" name="pass" required id="loginpwd">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
@@ -113,15 +113,15 @@
 				</div>
 				<div class="modal-body">
 					<!-- Your login form goes here -->
-					<form>
+					<form class="formPreventDefault">
 						<div class="form-group">
 							<!-- <label for="exampleInputEmail1">Email address</label> -->
-							<input type="email" class="form-control p-4" id="SellerInputEmail1"
-								aria-describedby="emailHelp" placeholder="Enter email" required>
+							<input type="text" class="form-control p-4" id="Sellerloginname"
+								aria-describedby="emailHelp" placeholder="User Name" required>
 						</div>
 						<div class="form-group">
 							<div class="input-group">
-								<input type="password" class="form-control p-4" id="SellerInputPassword1"
+								<input type="password" class="form-control p-4" id="Sellerloginpwd"
 									placeholder="Password" required>
 								<div class="input-group-append">
 									<button class="btn btn-outline-secondary" type="button" id="togglePassword">
@@ -130,7 +130,7 @@
 								</div>
 							</div>
 						</div>
-						<button type="submit" class="   sellerCardHover" id="sellerbtn">Submit</button>
+						<button type="submit" class="sellerCardHover" id="sellerbtnlogin">Submit</button>
 					</form>
 				</div>
 			</div>
@@ -138,7 +138,7 @@
 	</div>
 	<!-- account creating modal--Sign Up Modal -->
 	<div class="modal fade glass" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
-		aria-hidden="true" >
+		aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered " role="document" id="signupmodel">
 			<div class="modal-content  ">
 				<div class="modal-header text-center">
@@ -150,21 +150,20 @@
 					<form id="hideformmodal" class="formPreventDefault">
 						<div class="">
 							<label for="CAInputName " style="font-weight: lighter;">Name</label>
-							<input type="text" class="form-control CA" id="CAInputName" placeholder="Enter name"
-								 >
-								<span id="nameerror"></span>
+							<input type="text" class="form-control CA" id="CAInputName" placeholder="Enter name">
+							<span id="nameerror"></span>
 						</div>
 						<div class="form-group">
 							<label for="CAInputEmail1" style="font-weight: lighter;">Email address</label>
 							<input type="email" class="form-control CA" id="CAInputEmail1" aria-describedby="emailHelp"
-								placeholder="Enter email"  >
-								<span id="emailerror"></span>
+								placeholder="Enter email">
+							<span id="emailerror"></span>
 						</div>
 						<div class="form-group">
 							<label for="CAInputPassword1" style="font-weight: lighter;"> Create Password</label>
 							<div class="input-group">
 								<input type="password" class="form-control CA" id="CAInputPassword1"
-									placeholder="Password"  >
+									placeholder="Password">
 								<div class="input-group-append">
 									<button class="btn btn-outline-secondary" type="button" id="togglePassword1">
 										<i class="fas fa-eye"></i>
@@ -182,16 +181,16 @@
 								<input type="radio" name="gender" id="Female" value="girl" class="p-3 radio-input">
 								<label for="Female" class="ml-2 radio-label">Female</label>
 							</div>
-						</div> 
-						<button type="submit" class="btn    w-100" style="border:1px solid rgb(155, 155, 155)" id="CAbtn"
-						>Create
+						</div>
+						<button type="submit" class="btn    w-100" style="border:1px solid rgb(155, 155, 155)"
+							id="CAbtn">Create
 							Account</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-<!-- dotlottie scripttag  -->
+	<!-- dotlottie scripttag  -->
 	<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 	<!-- fireabase  -->
 	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -211,7 +210,7 @@
 		};
 		//  connect to  initializeApp firebase
 		const app = firebase.initializeApp(firebaseConfig);
-        //   create ref to database function 
+		//   create ref to database function 
 		const database = firebase.database();
 	</script>
 	<!-- Font Awesome JS for icons -->

@@ -10,22 +10,22 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="index.css">
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark  navbar-custom" style="z-index: 2;">
-    <h4 style="font-weight: bold;">
-      Sleak.com
-    </h4>
-    <button class="navbar-toggler  " style="color: black; outline:none"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- nav bar  -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark navbar-custom" style="z-index: 2;">
+    <h4 style="font-weight: bold;">Sleak.com</h4>
+    <button class="navbar-toggler" style="color: black; outline:none" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="d-block" id="togle">
         <span>|</span>
-      <span>|</span>
-      <span>|</span>
+        <span>|</span>
+        <span>|</span>
       </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link text-dark " href="#">Men</a>
+          <a class="nav-link text-dark" href="#">Men</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark" href="#">Women</a>
@@ -37,7 +37,7 @@
           <a class="nav-link support-icon text-dark" href="#">Support</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link support-icon text-dark" onclick="openLink('log.html')" style="cursor: pointer;">login</a>
+          <a class="nav-link support-icon text-dark" onclick="openLink('log.html')" style="cursor: pointer;">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link bag-icon text-dark" href="#">Bag</a>
@@ -45,6 +45,7 @@
       </ul>
     </div>
   </nav>
+  <!-- slider -->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="z-index: -2;">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -71,11 +72,12 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <!-- products  -->
   <section id="products">
     <div>
       <div class="row">
         <!-- First Card -->
-        <div class="col-md-4" data-aos="fade-in"      data-aos-delay="200" data-aos-easing="ease-in">
+        <div class="col-md-4" data-aos="fade-in" data-aos-delay="200" data-aos-easing="ease-in">
           <div class="card mb-4">
             <div class="card-img-overlay">
               <img class="card-img-top" src="img/slen.svg" alt="Card image cap">
@@ -84,7 +86,7 @@
           </div>
         </div>
         <!-- Second Card -->
-        <div class="col-md-4" data-aos="fade-in"      data-aos-delay="400" data-aos-easing="ease-in">
+        <div class="col-md-4" data-aos="fade-in" data-aos-delay="400" data-aos-easing="ease-in">
           <div class="card mb-4">
             <div class="card-img-overlay">
               <img class="card-img-top" src="https://marketplace.canva.com/EAEtzeGCgfc/1/0/1600w/canva--2brA85AldQ.jpg"
@@ -94,7 +96,7 @@
           </div>
         </div>
         <!-- Third Card -->
-        <div class="col-md-4" data-aos="fade-in"      data-aos-delay="600" data-aos-easing="ease-in">
+        <div class="col-md-4" data-aos="fade-in" data-aos-delay="600" data-aos-easing="ease-in">
           <div class="card mb-4">
             <div class="card-img-overlay">
               <img class="card-img-top" src="img/Group 2.svg" alt="Card image cap">
@@ -104,25 +106,42 @@
         </div>
       </div>
   </section>
-  <section>
-    <div class="banner  m-2 ">
-      <div class="row d-flex justify-content-center m-5  ">
-<h1>banner</h1>
-      </div>
-    </div>
-  </section>
-  <selection>
-    <div class="asceDiv">
-      <div class="col-md-4  " data-aos="fade-in"      data-aos-delay="600" data-aos-easing="ease-in">
-        <div class="card mb-4 "  style="border-radius: 20px;">
-          <div class="card-img-overlay">
-            <img class="card-img-top " src="img/watch.png" alt="Card image cap">
-            <h2 class="card-title">Watch</h2>
+  <!-- products list  -->
+  <section id="products">
+    <div>
+      <div class="row d-flex  justify-content-center  text-center ">
+        <div class="col-lg-4" data-aos="fade-in" data-aos-delay="200" data-aos-easing="ease-in">
+          <div class="card mb-4" style="border-radius: 20px;">
+            <div class="card-img-overlay">
+              <img class="card-img-top" src="img/watch.png" alt="Card image cap">
+              <h2 class="card-title">Watch</h2>
+            </div>
           </div>
+        </div>
+        <div class="col-lg-6 h-100 w-100 bigdiv position-relative">
+          <!-- Add your video tag here -->
+          <video autoplay muted loop style="width: 100%; height: 100%; border-radius: 20px;" data-aos="fade-in"
+            data-aos-delay="400" data-aos-easing="ease-in">
+            <source src="img/Epic Adidas shoe commercial concept _ product video B-ROLL.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <span id="coupon" class="coupon position-absolute" style="left: 20px; top: 20px; cursor: pointer;">Coupon:
+            U12IJ</span>
+          <h3 class="offertxt " data-aos="fade-in" data-aos-delay="600" data-aos-easing="ease-in" data-aos-offset="20">
+            JOIN ADIDAS AND GET 15% OFF</h3>
         </div>
       </div>
     </div>
-  </selection>
+  </section>
+  <!-- banner  -->
+  <section>
+    <div class="banner  m-2 " data-aos="fade-in" data-aos-delay="200" data-aos-easing="ease-in">
+      <div class="row d-flex justify-content-center m-5  " data-aos="fade-in" data-aos-delay="400"
+        data-aos-easing="ease">
+        <img src="img/Automatics_D.webp" alt="banner" class="bannerimg">
+      </div>
+    </div>
+  </section>
   <!-- Bootstrap JS and jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <!-- aos animation  -->

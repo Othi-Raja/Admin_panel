@@ -5,40 +5,83 @@
 //   });
 // });
 //  to open link dynamic 
+// navbar 
+// loginvalidation()
+document.querySelector('#sellerbtnlogin').addEventListener('click', function () {
+  // loginvalidation()
+  // const loginname = document.getElementById('Sellerloginname').value;
+  // const loginpwd = document.getElementById('Sellerloginpwd').value;
+  let checkuname, checkUpassword, gender;
+  let sellerloginName = document.querySelector('#Sellerloginname');
+  let sellerloginPwd = document.querySelector('#Sellerloginpwd');
+  let loginName = sellerloginName.value
+  let loginPwd = sellerloginPwd.value
+  console.log(loginName, loginPwd);
+  database.ref(`${loginName}`).on('value', (snapshot) => {
+    snapshot.forEach((childSnapshot) => {
+      const key = childSnapshot.key;
+      const product = childSnapshot.val();
+      checkuname = product.Uname; // Assign to global variable
+      checkUpassword = product.UPassword; // Assign to global variable
+      gender = product.Gender
+      console.log(checkuname, checkUpassword);
+      if (loginName === checkuname && loginPwd === checkUpassword) {
+        window.open(`sellerpanel.html?data=${loginName.toLowerCase()}&Gender=${gender}`, '_blank');
+        document.querySelector('#Sellerloginpwd').value = '';
+        document.querySelector('#Sellerloginname').value = '';
+        $('#exampleModalCenter').hide()
+        return; // Exit the function after successful login
+      } else {
+        alert('error');
+        return;
+      }
+    });
+  });
+})
+window.onscroll = function () { scrollFunction() };
+function scrollFunction() {
+  var navbar = document.getElementById("navbar");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 function openLink(url) {
   window.open(url, '_blank');
 }
 //  to view password 
 document.getElementById('togglePassword').addEventListener('click', function () {
-  const passwordInput = document.getElementById('SellerInputPassword1');
+  const passwordInput = document.getElementById('Sellerloginpwd');
   const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
   passwordInput.setAttribute('type', type);
-  this.querySelector('i').classList.toggle('fa-eye-slash');
 });
 document.getElementById('togglePassword1').addEventListener('click', function () {
   const passwordInput = document.getElementById('CAInputPassword1');
   const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
   passwordInput.setAttribute('type', type);
 });
-//  form validation 
-const mail = document.getElementById('SellerInputEmail1');
-const pwd = document.getElementById('SellerInputPassword1');
-const validate = () => {
-  const defaultEmail = 'default@example.com';
-  const defaultPassword = 'defaultPassword';
-  if (mail.value === defaultEmail && pwd.value === defaultPassword) {
-    // Open the link  
-    window.open('sellerpanel.html', '_blank');
-  } else {
-    // Display a popup 
-    alert('Invalid email or password');
-  }
-};
-document.getElementById('sellerbtn').addEventListener('click', function () {
-  validate()
-}) 
+// //  form validation 
+// const mail = document.getElementById('SellerInputEmail1');
+// const pwd = document.getElementById('SellerInputPassword1');
+// const validate = () => {
+//   const defaultEmail = 'default@example.com';
+//   const defaultPassword = 'defaultPassword';
+//   if (mail.value === defaultEmail && pwd.value === defaultPassword) {
+//     // Open the link  
+//     window.open('sellerpanel.html', '_blank');
+//   } else {
+//     // Display a popup 
+//     alert('Invalid email or password');
+//   }
+// };
+// document.getElementById('sellerbtn').addEventListener('click', function () {
+//   validate()
+// })
+let sellerUserName = document.querySelector('#SellerInputUName')
+let sellerPassword = document.querySelector('#SellerInputPassword1')
 const radioButton = document.querySelectorAll('input[name="gender"]');
-let selectedGender = '';  
+let selectedGender = '';
 // Loop through each radio button
 radioButton.forEach(function (radioButtonvalue) {
   radioButtonvalue.addEventListener('change', function () {
@@ -85,20 +128,6 @@ document.getElementById('CAbtn').addEventListener('click', function () {
   const UserName = document.getElementById('CAInputName').value;
   const UserMailid = document.getElementById('CAInputEmail1').value;
   const UserPassword = document.getElementById('CAInputPassword1').value;
-  // let usernameKey = []
-  // let key;
-  // let data;
-  // database.ref().once('value')
-  //   .then(function (snapshot) {
-  //       data = snapshot.val();
-  //     for (const key in data){
-  //       usernameKey =  key
-  //       console.log(usernameKey);
-  //     }
-  //   })
-  //   .catch(function (error) {
-  //     console.error(error);
-  //   }); 
   if (UserName === '') {
     $('#nameerror').text("Enter Your name").css({
       'color': 'red',

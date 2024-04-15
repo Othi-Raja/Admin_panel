@@ -630,46 +630,41 @@ input.input100 {
   -webkit-backdrop-filter: blur(7.4px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
 /* Optional CSS for styling */
 .form-group {
-  margin-bottom: 1rem; /* Optional margin */
+  margin-bottom: 1rem;
+  /* Optional margin */
 }
-
 .radio-input {
-  opacity: 0; /* Hide the actual radio button */
+  opacity: 0;
+  /* Hide the actual radio button */
   position: absolute;
   margin: 0;
-   
- 
 }
-
 .radio-label {
   background-color: rgba(128, 128, 128, 0.177);
   border-radius: 10px;
   padding: 2px 20px 2px 20px;
   border: 1px solid rgba(128, 128, 128, 0.319);
-  color: gray; /* Change color when checked */
+  color: gray;
+  /* Change color when checked */
   cursor: pointer;
   font-weight: lighter;
-  
-  transition: color 0.5s ease; /* Smooth color transition */
+  transition: color 0.5s ease;
+  /* Smooth color transition */
 }
-.radio-input{
+.radio-input {
   border: 2px solid rgba(128, 128, 128, 0.551);
 }
-.radio-input:checked + .radio-label {
-  color: #ffffff; /* Change color when checked */
- background-color: grey;
+.radio-input:checked+.radio-label {
+  color: #ffffff;
+  /* Change color when checked */
+  background-color: grey;
   border-radius: 10px;
   padding: 2px 20px 2px 20px;
   font-weight: bold;
 }
-
-.radio-input:focus + .radio-label {
-  outline: 1px solid #007bff; /* Optional focus style */
+.radio-input:focus+.radio-label {
+  outline: 1px solid #007bff;
+  /* Optional focus style */
 }
-
- 
-
- 
