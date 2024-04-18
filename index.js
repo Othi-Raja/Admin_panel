@@ -7,6 +7,44 @@
 //  to open link dynamic 
 // navbar 
 // loginvalidation()
+
+let userIdvd = document.querySelector('#CAInputName');
+let useridary = []
+database.ref().on('value', (snapshot) => {
+ 
+  snapshot.forEach((childSnapshot) => {
+    const key = childSnapshot.key;
+    const product = childSnapshot.val();
+ useridary.push(key)
+ console.log(useridary);
+})
+  
+})
+function SellerIDvalidation() {
+  console.log('check1');
+  if (useridary.includes(userIdvd.value)) {
+      console.log('check');
+      $('#nameerror').text('This User ID is already taken');
+      userIdvd.style.color ='red'
+      userIdvd.style.backgroundColor = '#FF6961 ';
+      userIdvd.value=''
+      setTimeout(function() {
+          $('#nameerror').hide();
+          userIdvd.style.color ='grey'
+      }, 2000); // Fade out after 2 seconds
+      // alert("This User ID is already exist");
+  } else {
+    userIdvd.style.color ='green'
+    userIdvd.style.backgroundColor = '#E4E6C3';
+    $('#nameerror').hide();
+    
+  }
+}
+
+    
+userIdvd.addEventListener('input',function(){
+  SellerIDvalidation()
+})
 document.querySelector('#sellerbtnlogin').addEventListener('click', function () {
   // loginvalidation()
   // const loginname = document.getElementById('Sellerloginname').value;
@@ -21,6 +59,7 @@ document.querySelector('#sellerbtnlogin').addEventListener('click', function () 
     snapshot.forEach((childSnapshot) => {
       const key = childSnapshot.key;
       const product = childSnapshot.val();
+
       checkuname = product.Uname; // Assign to global variable
       checkUpassword = product.UPassword; // Assign to global variable
       gender = product.Gender

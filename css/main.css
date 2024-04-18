@@ -668,3 +668,7 @@ input.input100 {
   outline: 1px solid #007bff;
   /* Optional focus style */
 }
+.logout{
+cursor: pointer;
+  /* font-weight: 600; */
+}
