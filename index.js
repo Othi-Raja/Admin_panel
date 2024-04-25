@@ -63,7 +63,7 @@ document.querySelector('#sellerbtnlogin').addEventListener('click', function () 
       checkuname = product.Uname; // Assign to global variable
       checkUpassword = product.UPassword; // Assign to global variable
       gender = product.Gender
-      console.log(checkuname, checkUpassword);
+      // console.log(checkuname, checkUpassword);
       if (loginName === checkuname && loginPwd === checkUpassword) {
         window.open(`sellerpanel.html?data=${loginName.toLowerCase()}&Gender=${gender}`, '_blank');
         document.querySelector('#Sellerloginpwd').value = '';
@@ -220,3 +220,5 @@ document.getElementById('CAbtn').addEventListener('click', function () {
     document.getElementById('CAInputPassword1').value = '';
   }
 })
+
+
