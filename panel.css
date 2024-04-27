@@ -1,0 +1,20 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.exit-arrow{
+padding-right: 20px;
+font-weight: bold;
+transition: all .5s ease-in-out;
+
+}
+.exit-arrow:hover{
+    transform: translatex(10px);
+}
+.logopannel{
+    cursor: pointer;
+}

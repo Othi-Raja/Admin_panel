@@ -24,18 +24,17 @@ function SellerIDvalidation() {
   console.log('check1');
   if (useridary.includes(userIdvd.value)) {
       console.log('check');
-      $('#nameerror').text('This User ID is already taken');
+
       userIdvd.style.color ='red'
-      userIdvd.style.backgroundColor = '#FF6961 ';
       userIdvd.value=''
+      $('#nameerror').text('This User ID is already taken');
       setTimeout(function() {
           $('#nameerror').hide();
           userIdvd.style.color ='grey'
       }, 2000); // Fade out after 2 seconds
       // alert("This User ID is already exist");
   } else {
-    userIdvd.style.color ='green'
-    userIdvd.style.backgroundColor = '#E4E6C3';
+    userIdvd.style.color ='green' 
     $('#nameerror').hide();
     
   }
@@ -222,3 +221,16 @@ document.getElementById('CAbtn').addEventListener('click', function () {
 })
 
 
+// nav bar 
+window.onscroll = function () { stickyNavbar() };
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function stickyNavbar() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}

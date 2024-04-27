@@ -668,7 +668,16 @@ input.input100 {
   outline: 1px solid #007bff;
   /* Optional focus style */
 }
-.logout{
-cursor: pointer;
-  /* font-weight: 600; */
+ 
+.bgdec{
+  background-color: yellowgreen;
+
+}
+.hov1:hover{
+  transform: translateY(5px);
+  transition: all .5s linear;
+}
+.hov2:hover{
+  transform: translateY(5px);
+  transition: all .5s linear;
 }

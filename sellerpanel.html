@@ -7,21 +7,18 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="panel.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" style="z-index: 2;">
-    <h4 style="font-weight: bold;">Sleak.com</h4>
+    <img src="img/arrow-left.svg" height="20px" alt="icon" class=" exit-arrow" onclick="eraseDataFromURL()" style="cursor: pointer;">
+    <h4 style="font-weight: bold;" class="logopannel">Sleak.com</h4>
     <div class="avathar ml-auto d-block  " id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item d-flex ">
-          <a class="nav-link text-dark p-3 " id="displayUsername" style="font-size: border ;"></a>
-          <img src="" height="45px" alt="Avatar">
+          <!-- <a class="nav-link text-dark p-3 " id="displayUsername" style="font-size: border ;"></a> -->
+          <img src="" height="45px" alt="Avatar" id="Avatar">
         </li>
-        <li class="nav-item">
-        </li>
-    <li class="nav-item p-2">    <a class="logout" style="cursor: pointer;"> </a><img src="img/logouticon.svg" width="20px" height="20px" alt="logouticon">
-
-    </li>
       </ul>
     </div>
   </nav>
@@ -98,11 +95,26 @@
     const data = urlParams.get('data');
     const gender = urlParams.get('Gender')
     // console.log(gender);
-    const imgElement = document.querySelector('img');
+    const imgElement = document.querySelector('#Avatar');
     // Set the src attribute of the img element
     imgElement.src = `https://avatar.iran.liara.run/public/${gender}`;
     // Set the alt attribute of the img element
     imgElement.alt = 'ava';
+
+    // erase data from URL 
+    function eraseDataFromURL() {
+    // Get the current URL
+    let currentURL = new URL(window.location.href);
+    // Remove the 'data' parameter from the URL
+    currentURL.searchParams.delete('data');
+    // Remove the 'Gender' parameter from the URL
+    currentURL.searchParams.delete('Gender');
+    // Replace the current URL without reloading the page
+    window.history.replaceState(null, null, currentURL.toString());
+    window.location.href = 'index.html';
+}
+// Call the function to erase data from the URL
+ 
     $('#displayUsername').text(data)
     function addProduct() {
       const productName = document.getElementById('productName').value;
@@ -174,7 +186,6 @@
         });
       }
     }
-    
   </script>
 </body>
 </html>
